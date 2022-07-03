@@ -4,8 +4,12 @@ on: push
 
 jobs:
   build:
-    name: push to TypeTalk
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          pwd
+      - name: push to TypeTalk
+        env:
+          MESSAGE: "- 50単語やる
+          - 2時までに布団に入る
+          - 運動する"
+        run: |
+          curl --data-urlencode 'message=$MESSAGE' -H 'X-TYPETALK-TOKEN: ${{ secrets.TYPETALK_TOKEN }}' https://typetalk.com/api/v1/topics/${{ secrets.TYPETALK_TOPIC_ID }}
