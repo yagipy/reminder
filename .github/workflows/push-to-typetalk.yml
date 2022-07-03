@@ -14,4 +14,4 @@ jobs:
           - 運動する
           "
         run: |
-          curl --data-urlencode 'message=${{ env.MESSAGE }}' -H 'X-TYPETALK-TOKEN: ${{ secrets.TYPETALK_TOKEN }}' https://typetalk.com/api/v1/topics/${{ secrets.TYPETALK_TOPIC_ID }}
+          curl -d $'message=${{ env.MESSAGE }}' -H 'X-TYPETALK-TOKEN: ${{ secrets.TYPETALK_TOKEN }}' https://typetalk.com/api/v1/topics/${{ secrets.TYPETALK_TOPIC_ID }}
