@@ -9,9 +9,9 @@ jobs:
       - name: push to TypeTalk
         env:
           MESSAGE: "
-          - 50単語やる
-          - 2時までに布団に入る
-          - 運動する
+          - 50単語やる\n
+          - 2時までに布団に入る\n
+          - 運動する\n
           "
         run: |
           curl -d $'message=${{ env.MESSAGE }}' -H 'X-TYPETALK-TOKEN: ${{ secrets.TYPETALK_TOKEN }}' https://typetalk.com/api/v1/topics/${{ secrets.TYPETALK_TOPIC_ID }}
