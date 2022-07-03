@@ -1,0 +1,11 @@
+on: push
+#  schedule:
+#    - cron: "0 0 0 * * *"
+
+jobs:
+  build:
+    name: push to TypeTalk
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          pwd
